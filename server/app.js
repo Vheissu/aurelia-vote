@@ -6,9 +6,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var swig = require('swig');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
-
 var app = express();
 
 const allowCrossDomain = function(req, res, next) {
@@ -33,8 +30,9 @@ app.use(allowCrossDomain);
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/users', users);
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname + '../index.html'));
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
