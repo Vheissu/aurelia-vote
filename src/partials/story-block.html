@@ -1,0 +1,13 @@
+<template bindable="story">
+    <article id="story.id">
+        <div class="story__rank">
+            <div class="story__rank-points">
+                <a href="javascript:void(0);" click.delegate="voteUp(story)">${story.upvotes} <i class="action-upvote">^</i></a>
+            </div>
+        </div>
+        <header>
+            <h1><a route-href="route: view; params.bind: {id: story.id}">${story.title}</a><a route-href="route: view; params.bind: {id: story.id}">${story.source}</a></h1>
+        </header>
+        <div class="story-meta"></div>
+    </article>
+</template>
