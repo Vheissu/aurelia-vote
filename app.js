@@ -30,6 +30,23 @@ app.use(allowCrossDomain);
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/api/stories/:count/:offset', (req, res) => {
+    return res.json([
+        {
+            id: 1,
+            upvotes: 6,
+            title: 'Man frees cat from tree',
+            source: 'foxnews.com' 
+        },
+        {
+            id: 2,
+            upvotes: 150,
+            title: 'Trump concedes to popular vote, Clinton sworn is as 46th president',
+            source: 'cnn.com' 
+        }
+    ]);
+});
+
 app.get('*', function(req, res) {
     res.sendFile(path.join(__dirname + 'public/index.html'));
 });

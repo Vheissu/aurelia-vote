@@ -1,5 +1,13 @@
 <template>
-  <div class="container">
-    <router-view></router-view>
-  </div>
+    <require from="./partials/site-header.html"></require>
+
+    <div id="notifications" show.bind="notification.message.msg !== ''">
+        <div class="notification alert ${notification.message.className}" role="alert"><p>${notification.message.msg}</p></div>
+    </div>
+
+    <site-header router.bind="router"></site-header>
+
+    <div class="container">
+        <router-view></router-view>
+    </div>
 </template>

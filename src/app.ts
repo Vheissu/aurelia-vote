@@ -1,8 +1,13 @@
-import {Aurelia} from 'aurelia-framework';
+import {Aurelia, autoinject} from 'aurelia-framework';
 import {Router, RouterConfiguration} from 'aurelia-router';
 
+import { Notification } from './services/notification';
+
+@autoinject()
 export class App {
   router: Router;
+
+  constructor(public notification: Notification) {}
 
   configureRouter(config: RouterConfiguration, router: Router) {
     config.title = 'Aurelia';
