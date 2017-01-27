@@ -7,6 +7,10 @@ header {
     color: #FFF;
 }
 
+#content {
+    margin-top: 50px;
+}
+
 .display-flex {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -30,6 +34,7 @@ header {
 .story__rank {
     -ms-flex-preferred-size: 50px;
         flex-basis: 50px;
+    text-align: center;
     width: 50px;
 }
 
