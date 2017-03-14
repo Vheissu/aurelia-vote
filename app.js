@@ -36,18 +36,37 @@ app.get('/stories/:count/:offset', (req, res) => {
             id: 1,
             upvotes: 6,
             title: 'Man frees cat from tree',
-            source: 'foxnews.com',
-            upvote_ids: [12, 9830928, 389378, 392183928393, 329382983] 
+            source: 'foxnews.com'
         },
         {
             id: 2,
             upvotes: 150,
             title: 'Trump concedes to popular vote, Clinton sworn is as 46th president',
-            source: 'cnn.com',
-            upvote_ids: [12, 9584, 288199883, 37112120989]  
+            source: 'cnn.com'
         }
     ]);
 });
+
+app.get('/story/:id', (req, res) => {
+    return res.json({
+        id: 1,
+        upvotes: 6,
+        title: 'Man frees cat from tree',
+        source: 'foxnews.com'
+    });
+}); 
+
+app.get('/story/:id/votes', (req, res) => {
+    return res.json({
+        upvote_ids: [12, 9830928, 389378, 392183928393, 329382983] 
+    });
+}); 
+
+app.post('/story/:id/vote', (req, res) => {
+    return res.json({
+        upvote_ids: [12, 9830928, 389378, 392183928393, 329382983] 
+    });
+}); 
 
 app.get('*', function(req, res) {
     res.sendFile(path.join(__dirname + 'index.html'));
