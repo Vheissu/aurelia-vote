@@ -30,7 +30,7 @@ app.use(allowCrossDomain);
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/api/stories/:count/:offset', (req, res) => {
+app.get('/stories/:count/:offset', (req, res) => {
     return res.json([
         {
             id: 1,

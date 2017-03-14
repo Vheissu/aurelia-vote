@@ -14,7 +14,7 @@ export class Api {
         this.http.configure(config => {
             config
                 .useStandardConfiguration()
-                .withBaseUrl('/api/');
+                .withBaseUrl('http://localhost:3000/');
             });
     }
 
