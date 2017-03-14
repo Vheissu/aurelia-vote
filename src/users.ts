@@ -1,9 +1,6 @@
 import {lazy} from 'aurelia-framework';
 import {HttpClient} from 'aurelia-fetch-client';
 
-// polyfill fetch client conditionally
-const fetch = !self.fetch ? System.import('isomorphic-fetch') : Promise.resolve(self.fetch);
-
 interface IUser {
   avatar_url: string;
   login: string;
@@ -18,8 +15,6 @@ export class Users {
   constructor(@lazy(HttpClient) private getHttpClient: () => HttpClient) {}
 
   async activate(): Promise<void> {
-    // ensure fetch is polyfilled before we create the http client
-    await fetch;
     const http = this.http = this.getHttpClient();
 
     http.configure(config => {

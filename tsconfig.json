@@ -8,15 +8,16 @@
     "moduleResolution": "node",
     "sourceMap": true,
     "allowJs": true,
-    "lib": [
-      "es2017", "dom"
-    ]
-  },
-  "awesomeTypescriptLoaderOptions": {
-    "forkChecker": true
+    "lib": ["es2017", "dom"]
   },
   "exclude": [
     "node_modules",
-    "dist"
-  ]
+    "dist",
+    "public"
+  ],
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "atom": {
+    "rewriteTsconfig": false
+  }
 }

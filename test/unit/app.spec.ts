@@ -1,5 +1,6 @@
 import './setup';
 import {App} from '../../src/app';
+import { Notification } from '../../src/services/notification';
 
 class RouterStub {
   routes;
@@ -15,11 +16,13 @@ class RouterStub {
 
 describe('the App module', () => {
   let sut;
+  let mockedNotification;
   let mockedRouter;
 
   beforeEach(() => {
+    mockedNotification = new Notification();  
     mockedRouter = new RouterStub();
-    sut = new App();
+    sut = new App(mockedNotification);
     sut.configureRouter(mockedRouter, mockedRouter);
   });
 
