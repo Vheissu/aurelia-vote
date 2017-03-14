@@ -36,13 +36,15 @@ app.get('/stories/:count/:offset', (req, res) => {
             id: 1,
             upvotes: 6,
             title: 'Man frees cat from tree',
-            source: 'foxnews.com' 
+            source: 'foxnews.com',
+            upvote_ids: [12, 9830928, 389378, 392183928393, 329382983] 
         },
         {
             id: 2,
             upvotes: 150,
             title: 'Trump concedes to popular vote, Clinton sworn is as 46th president',
-            source: 'cnn.com' 
+            source: 'cnn.com',
+            upvote_ids: [12, 9584, 288199883, 37112120989]  
         }
     ]);
 });
